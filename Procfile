@@ -1,1 +1,1 @@
-web: gunicorn tasky
+web: gunicorn tasky.wsgi

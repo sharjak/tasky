@@ -1,0 +1,126 @@
+{% extends './base.html' %}
+{% load staticfiles %}
+{% block head %}
+<script src="{% static 'js/index.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="img fadein-img" data-img="{% static 'images/index/mainPageFirst.jpg' %}"><span
+  class="multiline fadein"><span class="max">Tasky</span><span class="subTitle">A new easy way to create tasks<br>and keep track of your habits.<br></span>
+  <button class="register-btn"
+          onclick="document.getElementById('modal-wrapper').style.display='block'">Sign up now!</button>
+
+<div id="modal-wrapper" class="modal">
+
+  <form class="modal-content animate" action="#">
+
+    <div class="container">
+      <h1>Create new user</h1>
+      <input type="text" placeholder="Enter Email" name="email">
+      <input type="password" placeholder="Enter Password" name="psw">
+      <input type="password" placeholder="Repeat Password" name="psw">
+      <button style="width:90%;" class="register-btn" type="submit">Sign up</button>
+    </div>
+
+  </form>
+
+</div></span></div>
+<div class="text-slide">
+  <div class="listOfActivities">
+    <div class="rowInstruction">
+      <div class="column">
+        <h1 class="rowNumber">1.</h1>
+        <p class="rowText">Create an account with Facebook, Google or custom login.</p>
+      </div>
+    </div>
+
+    <div class="rowInstruction">
+      <div class="column">
+        <h1 class="rowNumber">2.</h1>
+        <p class="rowText">Create tasks you need to do for the day, week, month or even year.</p>
+      </div>
+    </div>
+
+    <div class="rowInstruction">
+      <div class="column">
+        <h1 class="rowNumber">3.</h1>
+        <p class="rowText">Drag and drop your tasks items on the calendar and set time of the task.</p>
+      </div>
+    </div>
+
+    <div class="rowInstruction">
+      <div class="column">
+        <h1 class="rowNumber">4.</h1>
+        <p class="rowText">Get a summary of tasks on calendar and as a tasklist of the day, week, month or year within
+          categories.</p>
+      </div>
+    </div>
+
+    <div class="rowInstruction">
+      <div class="column">
+        <h1 class="rowNumber">5.</h1>
+        <p class="rowText">If the task is done you can easily tick it on your tasklist and see results on calendar as
+          green background.</p>
+      </div>
+    </div>
+
+    <div class="rowInstruction">
+      <div class="column">
+        <h1 class="rowNumber">6.</h1>
+        <p class="rowText">Get summary of tasks and habits completed and statistics with a rank of how good are you at
+          scheduling time.</p>
+      </div>
+    </div>
+  </div>
+  <h2 style="padding-top:20px;">Instruction video</h2>
+  <iframe width="60%" height="60%" style="margin-top:50px;"
+          src="https://www.youtube.com/embed/fJ9rUzIMcZQ">
+  </iframe>
+</div>
+<div class="img" data-img="{% static 'images/index/mainPageSecond.jpg' %}"><span class="multiline"><span class="max">DISCOVER</span>
+  <span class="subTitle">your abilities to use your time most efficiently.</span></span>
+</div>
+<div class="text-slide"><span class="multiline"><span class="max">ABOUT US</span><span
+  class="text-page-text subTitle">Some fun information about us.</span></span>
+</div>
+<div class="img" data-img="{% static 'images/index/mainPageFourth.jpg' %}"><span class="multiline"><span class="max">SHARE</span><span
+  class="subTitle">your success and give feedback through social media.</span></span>
+</div>
+
+<div class="text-slide">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+        <span class="max">CONTACT US</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3">
+        <form id="contact-form" class="form" action="#" method="POST" role="form">
+          <div class="form-group">
+            <label class="form-label" for="name">Your Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Your name" tabindex="1" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Your Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" tabindex="2"
+                   required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="subject">Subject</label>
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" tabindex="3">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea rows="5" cols="50" name="message" class="form-control" id="message" placeholder="Message..."
+                      tabindex="4" required></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-start-order">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

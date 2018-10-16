@@ -1,0 +1,181 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400, 300, 600);
+ * {
+    padding:0;
+    margin:0;
+}
+#container {
+    background-color:#669ef9;
+    color:#fff;
+    border: #fff 1px solid;
+    width:80%;
+    margin:100px auto auto auto;
+    padding-bottom:12px;
+}
+#formContainer {
+    text-align: center;
+    margin-bottom:10px;
+}
+
+#taskInput {
+    width: 30%;
+}
+
+.dateInput {
+    width: 16%;
+}
+
+#addBtn {
+    background-color: #3aff96;
+    border: #000 2px solid;
+    height:36px;
+    color:#fff;
+    text-align: center;
+    font-size:14px;
+    margin-left:10px;
+    font-family:'Open Sans', sans-serif;
+    width: 80px;
+}
+
+.inputField {
+    margin: 2px;
+    border: solid black 2px !important;
+    font-size:14px;
+    font-family:'Open Sans', sans-serif;
+    height:36px;
+    border:0;
+    color:#000;
+    padding-left:15px;
+   -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+}
+.inputField:focus{
+  box-shadow: 0px 0px 1pt 1pt #999999;
+  background-color:#bcd5ff;
+  outline:none;
+}
+::-webkit-input-placeholder {
+    color: #333333;
+    font-style:italic;
+    /* padding-left:10px; */
+}
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #333333;
+    font-style:italic;
+}
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #333333;
+    font-style:italic;
+}
+:-ms-input-placeholder {
+    font-style:italic;
+}
+
+header {
+    background-color:lightskyblue;
+    margin-top:0;
+    height:48px;
+    text-align:center;
+    bottom-border: #000 solid 1px;
+}
+header h1 {
+    font-size:25px;
+    font-weight:300;
+    line-height:48px;
+  width:50%;
+  display:inline;
+}
+header a{
+
+  width:40%;
+  display:inline;
+  line-height:48px;
+}
+#taskEntryForm {
+    height: 48px;
+    border-width:0px;
+    padding: 0px 12px 0px 12px;
+    font-size:0px;
+}
+#taskList {
+    background-color:lightskyblue;
+    margin:auto;
+    width: 97%;
+    list-style: none;
+    font-size:19px;
+    font-weight:600;
+}
+#tasklist li {
+    background-color:#17181D;
+    height:48px;
+    padding-left:12px;
+    margin:0 auto 10px auto;
+    line-height:48px;
+    list-style:none;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+
+.task {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: white solid 2px;
+}
+
+.addTaskItem input {
+    float: left;
+    width: 200px;
+}
+
+.actionButtonsWrapper {
+    text-align: center;
+    margin-bottom: 10px
+}
+
+.actionButton {
+    margin-top: 10px;
+    width: 10%;
+    height: 30px;
+}
+
+#addTask {
+    background-color: #3aff96;
+}
+
+#filterTasks {
+    background-color: #72fff5;
+}
+
+#filterContainer {
+    text-align:center;
+    display: none;
+    margin-bottom: 10px;
+}
+
+#filterBtn {
+    width: 80px;
+    height: 36px;
+    background-color: #72fff5;
+    border: #000 2px solid;
+}
+
+
+.dropdown.multiselect input[type="checkbox"] {
+	display: none;
+}
+
+.dropdown.multiselect input[type="checkbox"] + label:before {
+	content: '\00a0';
+	width: 15px;
+	display: inline-block;
+	padding-right: 20px;
+}
+
+.dropdown.multiselect input[type="checkbox"]:checked + label:before {
+	content: '\2714';
+	padding-right: 20px;
+}

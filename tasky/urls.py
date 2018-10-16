@@ -21,7 +21,7 @@ from userStatistics import views as userStatisticsViews
 from django.urls import path
 
 urlpatterns = [
-    path(r'^admin/', admin.site.urls, name='adminsite'),
+    path('admin/', admin.site.urls, name='adminsite'),
     path('', homeViews.index, name='home'),
     path('calendar/', taskCalendarViews.taskCalendar, name='calendar'),
     path('tasklist/', taskListViews.taskList, name='tasklist'),

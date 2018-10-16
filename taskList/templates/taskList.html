@@ -1,0 +1,59 @@
+{% extends './base.html' %}
+{% load static %}
+{% block head %}
+<script src="{% static 'js/taskList.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/taskList.css' %}">
+<link href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css"
+        rel="stylesheet" type="text/css" />
+<script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"
+        type="text/javascript"></script>
+{% endblock %}
+
+{% block body %}
+<div id="container">
+    <header>
+         <h1>Your personal task list</h1>
+    </header>
+    <section id="taskIOSection">
+        <div class="actionButtonsWrapper">
+            <Button id="addTask" class="actionButton">Add task</Button>
+            <Button id="filterTasks" class="actionButton">Filter tasks</Button>
+        </div>
+        <div id="formContainer">
+            <form id="taskEntryForm">
+                <input id="taskInput" class="inputField addTaskItem" placeholder="Add a new task..." />
+                <select id="repeat" class="inputField addTaskItem">
+                    <option selected="selected" hidden>Repeat</option>
+                    <option value="fixed times">fixed times</option>
+                    <option value="one time">one time</option>
+                    <option value="daily">daily</option>
+                    <option value="weekly">weekly</option>
+                    <option value="monthly">monthly</option>
+                </select>
+                <select id="times" class="inputField addTaskItem">
+                    <option selected="selected" hidden>Times</option>
+                </select>
+                <select id="days" class="inputField addTaskItem mdb-select md-form" multiple>
+                    <option selected="days" hidden>Days</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                </select>
+                <input id="taskStartDate" class="inputField dateInput addTaskItem" onfocus="(this.type='date')" placeholder="Pick start date...">
+                <input id="taskEndDate" class="inputField dateInput addTaskItem" onfocus="(this.type='date')" placeholder="Pick end date...">
+                <input id="addBtn" class="addTaskItem" type="submit" value="Add">
+            </form>
+        </div>
+        <div id="filterContainer">
+            <input id="filterStartDate" class="inputField dateInput addTaskItem" onfocus="(this.type='date')" placeholder="Pick start date...">
+            <input id="filterEndDate" class="inputField dateInput addTaskItem" onfocus="(this.type='date')" placeholder="Pick end date...">
+            <input id="filterBtn" class="addTaskItem" type="submit" value="Filter">
+        </div>
+        <ul id="taskList" class="unstyled"></ul>
+    </section>
+</div>
+{% endblock %}

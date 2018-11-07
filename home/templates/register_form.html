@@ -1,0 +1,26 @@
+{% extends './index.html' %}
+{% block content %}
+<div id="modal-wrapper" class="modal">
+
+  <form class="modal-content animate" role="form" action="" method="post">
+    <h1>Create new user</h1>
+    {% csrf_token %}
+    {% include './form_template.html' %}
+    <div class="form-group">
+      <div class="container">
+        <button class="modal-register-btn register-btn btn" type="submit">Sign up</button>
+        <div class="col-xs-12">
+          <button type="button" class="btn-other-login-modal btn btn-social btn-facebook btn-primary">
+            <a class="social-link" href="{% url 'social:begin' 'facebook' %}"><span class="fa fa-facebook"></span>acebook</a>
+          </button>
+          <button type="button" class="btn-other-login-modal btn btn-social btn-google btn-danger">
+            <a class="social-link" href="{% url 'social:begin' 'google-oauth2' %}"><span class="fa fa-google"></span>oogle</a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+{% endblock %}

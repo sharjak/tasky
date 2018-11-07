@@ -29,14 +29,28 @@ SECRET_KEY = 'lbo^m&#ep*$4!z-qif^t3nvlawpdp#0x9hk=xk6i8&+f#$uuw%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+LOGIN_REDIRECT_URL = 'home'
 
+# ------ ONLY IN HEROKU HTTPS ------
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+ALLOWED_HOSTS = ['127.0.0.1', 'http://itasky.herokuapp.com/']
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'taskyinformation@gmail.com'
+EMAIL_HOST_PASSWORD = 'Tasky123!'
+EMAIL_PORT = 587
 
 # Application definition
 
 INSTALLED_APPS = [
+    "sslserver",
     'django.contrib.admin',
     'django.contrib.auth',
+    'social_django',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -70,10 +84,27 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.open_id.OpenIdAuth',
+    'social_core.backends.google.GoogleOpenId',
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '740986076009-1fhkoii0egnk1o7do04j3fddv25p1kve.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'HmL9emmEnqNCgmPtd-e29BiY'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '262510961130127'
+SOCIAL_AUTH_FACEBOOK_SECRET = '128cdcf3e8739cc2a53e582f4f59e113'
 
 WSGI_APPLICATION = 'tasky.wsgi.application'
 
@@ -85,13 +116,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'tasky.sqlite3'),
-        'USER':'marks',
-        'PASSWORD':'password',
+        'USER':'admin',
+        'PASSWORD':'admin123!',
         'HOST':'127.0.0.1',
         'PORT':'5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

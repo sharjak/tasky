@@ -8,24 +8,13 @@
 {% block body %}
 <div class="img fadein-img" data-img="{% static 'images/index/mainPageFirst.jpg' %}"><span
   class="multiline fadein"><span class="max">Tasky</span><span class="subTitle">A new easy way to create tasks<br>and keep track of your habits.<br></span>
-  <button class="register-btn"
+  {% if not user.is_authenticated %}
+  <button class="register-btn btn"
           onclick="document.getElementById('modal-wrapper').style.display='block'">Sign up now!</button>
-
-<div id="modal-wrapper" class="modal">
-
-  <form class="modal-content animate" action="#">
-
-    <div class="container">
-      <h1>Create new user</h1>
-      <input type="text" placeholder="Enter Email" name="email">
-      <input type="password" placeholder="Enter Password" name="psw">
-      <input type="password" placeholder="Repeat Password" name="psw">
-      <button style="width:90%;" class="register-btn" type="submit">Sign up</button>
-    </div>
-
-  </form>
-
-</div></span></div>
+{% block content %}
+  {% endblock %}
+  {% endif %}
+</span></div>
 <div class="text-slide">
   <div class="listOfActivities">
     <div class="rowInstruction">

@@ -25,5 +25,6 @@ urlpatterns = [
     path('', homeViews.index, name='home'),
     path('calendar/', taskCalendarViews.taskCalendar, name='calendar'),
     path('tasklist/', taskListViews.taskList, name='tasklist'),
-    path('statistics/', userStatisticsViews.userStatistics, name='statistics')
+    path('statistics/', userStatisticsViews.userStatistics, name='statistics'),
+    path('tasklist/task/', taskListViews.task, name='task')
 ]

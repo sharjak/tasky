@@ -32,7 +32,7 @@ DEBUG = True
 LOGIN_REDIRECT_URL = 'home'
 
 # Pywit integration, django-analytics
-PIWIK_DOMAIN_PATH = 'www.itasky.herokuapp.com/piwit'
+PIWIK_DOMAIN_PATH = 'http://itasky.herokuapp.com/'
 PIWIK_SITE_ID = '1'
 
 # ------ ONLY IN HEROKU HTTPS ------

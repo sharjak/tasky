@@ -31,8 +31,12 @@ DEBUG = True
 
 LOGIN_REDIRECT_URL = 'home'
 
+# Pywit integration, django-analytics
+PIWIK_DOMAIN_PATH = 'www.itasky.herokuapp.com/piwit'
+PIWIK_SITE_ID = '1'
+
 # ------ ONLY IN HEROKU HTTPS ------
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -46,6 +50,7 @@ EMAIL_PORT = 587
 
 # Application definition
 
+
 INSTALLED_APPS = [
     "sslserver",
     'django.contrib.admin',
@@ -58,7 +63,9 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'taskCalendar.apps.TaskcalendarConfig',
     'taskList.apps.TasklistConfig',
-    'userStatistics.apps.UserstatisticsConfig'
+    'userStatistics.apps.UserstatisticsConfig',
+    'analytical',
+    'piwikapi'
 ]
 
 MIDDLEWARE = [

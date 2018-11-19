@@ -4,3 +4,4 @@ gunicorn==19.9.0
 django-analytical==2.5.0
 piwikapi==0.3
 django-sslserver==0.20
+social-app-django==3.1.0

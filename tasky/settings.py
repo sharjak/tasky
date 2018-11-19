@@ -32,13 +32,14 @@ DEBUG = True
 LOGIN_REDIRECT_URL = 'home'
 
 # Pywit integration, django-analytics
-PIWIK_DOMAIN_PATH = 'http://itasky.herokuapp.com/'
+#PIWIK_DOMAIN_PATH = 'itasky.herokuapp.com/piwik'
+PIWIK_DOMAIN_PATH = 'localhost/piwik'
 PIWIK_SITE_ID = '1'
 
 # ------ ONLY IN HEROKU HTTPS ------
 SECURE_SSL_REDIRECT = False
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['127.0.0.1', 'http://itasky.herokuapp.com/']
 

@@ -1,4 +1,4 @@
 *.pyc
-.idea\
+.idea/
 tasky.sqlite3
 tasky\settings.py

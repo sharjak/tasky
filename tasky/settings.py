@@ -33,8 +33,6 @@ LOGIN_REDIRECT_URL = '/home/'
 
 # Pywit integration, django-analytics
 #PIWIK_DOMAIN_PATH = 'itasky.herokuapp.com/piwik'
-PIWIK_DOMAIN_PATH = 'localhost/piwik'
-PIWIK_SITE_ID = '1'
 
 # ------ ONLY IN HEROKU HTTPS ------
 SECURE_SSL_REDIRECT = False
@@ -66,7 +64,6 @@ INSTALLED_APPS = [
     'taskList.apps.TasklistConfig',
     'userStatistics.apps.UserstatisticsConfig',
     'analytical',
-    'piwikapi',
 ]
 
 MIDDLEWARE = [

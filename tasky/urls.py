@@ -20,22 +20,23 @@ from taskCalendar import views as taskCalendarViews
 from taskList import views as taskListViews
 from userStatistics import views as userStatisticsViews
 from django.urls import path, include
+import tasky.views as views
 from django.contrib.auth.urls import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='adminsite'),
     path('accounts/', include('django.contrib.auth.urls')),
-    url(r'^register/$', homeViews.UserFormView.as_view(), name='register'),
-    #url(r'^login/$', auth_views.LoginView.as_view, name='login'),
-    #url(r'^logout/$', auth_views.LogoutView.as_view, {'next_page': 'home'}, name='logout'),
-    url(r'^login/$', auth_views.auth_login, name='login'),
-    url(r'^logout/$', auth_views.auth_logout, {'next_page': 'home'}, name='logout'),
+    url(r'^register/$', views.register, name='register'),
+    # url(r'^login/$', auth_views.LoginView.as_view, name='login'),
+    # url(r'^logout/$', auth_views.LogoutView.as_view, {'next_page': 'home'}, name='logout'),
+    url(r'^login/$', views.logIn , name='login'),
+    url(r'^logout/$', views.logOut, name='logout'),
     url(r'^auth/', include('social_django.urls', namespace='social')),
     url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
         homeViews.activate, name='activate'),
-    path('', homeViews.index, name='home'),
+    path('', homeViews.HomeView.as_view(), name='home'),
     path('calendar/', taskCalendarViews.taskCalendar, name='calendar'),
     path('tasklist/', taskListViews.taskList, name='tasklist'),
     path('statistics/', userStatisticsViews.userStatistics, name='statistics'),
-    path('tasklist/task/', taskListViews.task, name='task')
+    path('tasklist/task/', taskListViews.task, name='task'),
 ]

@@ -29,7 +29,7 @@ SECRET_KEY = 'lbo^m&#ep*$4!z-qif^t3nvlawpdp#0x9hk=xk6i8&+f#$uuw%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = '/home/'
 
 # Pywit integration, django-analytics
 #PIWIK_DOMAIN_PATH = 'itasky.herokuapp.com/piwik'
@@ -66,7 +66,7 @@ INSTALLED_APPS = [
     'taskList.apps.TasklistConfig',
     'userStatistics.apps.UserstatisticsConfig',
     'analytical',
-    'piwikapi'
+    'piwikapi',
 ]
 
 MIDDLEWARE = [

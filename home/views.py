@@ -13,8 +13,10 @@ from home.tokens import account_activation_token
 from .forms import UserForm
 
 # Create your views here.
-def index(request):
-  return render(request,'index.html')
+
+class HomeView(View):
+  def get(self, request, *args, **kwargs):
+    return render(request,'index.html')
 
 class UserFormView(View):
   form_class = UserForm

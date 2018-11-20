@@ -119,10 +119,10 @@ WSGI_APPLICATION = 'tasky.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'tasky.sqlite3'),
-        'USER':'admin',
-        'PASSWORD':'admin123!',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tasky',
+        'USER':'postgres',
+        'PASSWORD':'password',
         'HOST':'127.0.0.1',
         'PORT':'5432',
     }

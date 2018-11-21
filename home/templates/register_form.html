@@ -3,7 +3,7 @@
 <div id="modal-wrapper" class="modal">
 
   <form class="modal-content animate" role="form" action="" method="post">
-    <h1>Create new user</h1>
+    <h1 class="modal-header">Create new user</h1>
     {% csrf_token %}
     {% include './form_template.html' %}
     <div class="form-group">
@@ -18,7 +18,6 @@
           </button>
         </div>
       </div>
-    </div>
 
   </form>
 

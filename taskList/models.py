@@ -1,6 +1,6 @@
 from django.db import models
 import psycopg2
-
+import datetime
 
 try:
   conn =psycopg2.connect("dbname='tasky' user='postgres' host='localhost' password='password'")
@@ -27,9 +27,10 @@ class Task(models.Model):
     return self.name
 
   @classmethod
-  def create(cls, name):
-    task = cls(name=name)
-    task.save()
+  def create(cls, name, date):
+    format_str = '%d %B %Y'
+    datetime_obj = datetime.datetime.strptime(date, format_str)
+    task = cls(name=name, start_date=datetime_obj, end_date=datetime_obj)
     return task
 
   @classmethod
@@ -42,10 +43,9 @@ class Task(models.Model):
       task_id = cur.fetchone()[0]
       conn.commit()
       cur.close()
+      return task_id
     except (Exception, psycopg2.DatabaseError) as error:
       print(error)
     finally:
       if conn is not None:
         conn.close()
-
-    return task_id

@@ -11,9 +11,8 @@ def taskList(request):
 @csrf_exempt
 def task(request):
   requestBody = request.POST
-  print(requestBody)
-  print(requestBody['task'])
-  task = Task.create(requestBody['task'])
+  task = Task.create(requestBody['task'], requestBody['date'])
+  task.save()
   context = {
       'task': requestBody['task'],
       'date': requestBody['date']

@@ -24,6 +24,7 @@ class Task(models.Model):
     """
     String for representing the Model object (in Admin site etc.)
     """
+    self.name = self.name
     return self.name
 
   @classmethod
